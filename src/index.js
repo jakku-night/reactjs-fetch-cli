@@ -4,20 +4,6 @@ import ReactDOM from 'react-dom';
 //import Clock from "./components/Clock";
 import Json from "./components/Json";
 
-/*
-function tick() {
-    const element = (
-        <div>
-            <Card user="Santiago"/>
-            <Clock/>
-        </div>
-    );
-    ReactDOM.render(element, document.getElementById('root'));
-}
-
-setInterval(tick, 1000);
-*/
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +12,7 @@ class App extends React.Component {
 
   async componentDidMount() {
     try{
-      const res = await fetch('http://localhost:3000/api/test/');
+      const res = await fetch('http://localhost:3000/api/users/get/');
       const data = await res.json();
       console.warn(data);
       this.setState({ data });
@@ -41,8 +27,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>{this.state.data.user}</h2>
+        <h1>Hola {this.state.data.user}!</h1>
+        <Json />
       </div>
     );
   }
