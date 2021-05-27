@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Json from "./components/Json";
-import Login from './components/Login';
+import FileUploader from './components/FileUploader';
+import Navigator from './components/Navigator';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +19,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Login />
+        
+        <FileUploader />
       </div>
     );
   }
