@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import FileUploader from './components/FileUploader';
-import Navigator from './components/Navigator';
+import Login from './components/Login';
+
+const user = React.createContext({
+  id: '',
+  token: ''
+});
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: [] };
+    this.state = {
+      data: []
+    };
   }
 
   async componentDidMount() {
@@ -19,8 +26,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        
-        <FileUploader />
+        <user.Provider value={{
+          id: '',
+          token: ''
+        }}>
+          <Login />
+        </user.Provider>
       </div>
     );
   }

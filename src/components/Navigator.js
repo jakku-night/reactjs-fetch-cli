@@ -11,7 +11,7 @@ export default class Navigator extends React.Component{
         //this.cardList = this.cardList.bind(this);
     }
     data = [1,2,3,4,5,6,7,8,9,10];
-    cardList = this.data.map((number)=> <li className="card-title" key={number.toString()} >{number}</li>);
+    cardList = this.data.map((number) => <li className="card-title" key={number.toString()} >{number}</li>);
     render = () => (
         <div className="card">
             <img className="card-img-top" data-src="holder.js/100x180/?text=Image cap" alt="Card image cap" />
